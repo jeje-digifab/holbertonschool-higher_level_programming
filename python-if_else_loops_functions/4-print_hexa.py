@@ -15,7 +15,5 @@ for dec in range(0, 99):
 
     if len(hexa) == 0:
         hexa = "0"
-    elif len(hexa) == 1:
-        hexa = "0" + hexa
 
     print("{} = 0x{}".format(dec, hexa))
