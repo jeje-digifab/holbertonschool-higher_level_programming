@@ -18,4 +18,4 @@ for dec in range(0, 99):
     elif len(hexa) == 1:
         hexa = "0" + hexa
 
-    print(str(dec) + " = 0x" + hexa)
+    print("{} = 0x{}".format(dec, hexa))

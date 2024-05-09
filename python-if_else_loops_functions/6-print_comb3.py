@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-for i in range(1,10):
-     for k in range(1,10):
-          if i!= k:
-               print(str(i)+str(k))
+for first in range(9):
+    for sec in range(10):
+        if first < sec:
+            if first == 8 and sec == 9:
+                print("{}{}".format(first, sec), end="\n")
+            else:
+                print("{}{}".format(first, sec), end=", ")
