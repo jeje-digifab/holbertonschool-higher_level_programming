@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 
-def main():
-
-
+import hidden_4
+import inspect
 
 
 if __name__ == "__main__":
-    main()
+    names = [name for name, value in inspect.getmembers(hidden_4, inspect.isfunction) if not name.startswith("__")]
+
+    names.sort()
+
+    for name in names:
+        print("{:s}".format(name))
