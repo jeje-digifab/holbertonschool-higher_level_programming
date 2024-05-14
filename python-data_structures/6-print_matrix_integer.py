@@ -3,7 +3,7 @@
 
 def print_matrix_integer(matrix=[[]]):
     for x in matrix:
-        print(" ".join(map(str, x)))
+        print(" ".join(["{}".format(elem) for elem in x]))
 
 
 if __name__ == "__main__":
