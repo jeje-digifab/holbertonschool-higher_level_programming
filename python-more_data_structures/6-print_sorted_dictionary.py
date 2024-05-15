@@ -2,7 +2,11 @@
 
 
 def print_sorted_dictionary(a_dictionary):
-    print("\n".join("{}: {}".format(k, v) for k, v in sorted(a_dictionary.items())))
+    if a_dictionary:
+        items = sorted(a_dictionary.items())
+        formatted_items = ["{}: {}".format(k, v) for k, v in items]
+        result = "\n".join(formatted_items)
+        print("{}".format(result))
 
 
 if __name__ == "__main__":
