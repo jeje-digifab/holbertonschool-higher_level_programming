@@ -2,12 +2,18 @@
 
 
 def safe_print_division(a, b):
-    div = None
     try:
-        div = a / b
+        if b == 0:
+            raise ZeroDivisionError
+        if a == 0 and b == 0:
+            div = 0.0
+        else:
+            div = a / b
+            if div.is_integer():
+                div = int(div)
     except ZeroDivisionError:
+        div = None
         print("Inside result: {:s}".format("None\n"), end="")
-        return None
     finally:
         if div is not None:
             print("Inside result: {:0.2f}\n".format(div), end="")
