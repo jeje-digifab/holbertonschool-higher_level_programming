@@ -3,6 +3,8 @@
 
 def safe_print_division(a, b):
     try:
+        a = float(a)
+        b = float(b)
         if b == 0:
             raise ZeroDivisionError
         if a == 0 and b == 0:
@@ -11,12 +13,17 @@ def safe_print_division(a, b):
             div = a / b
             if div.is_integer():
                 div = int(div)
+    except (ValueError, TypeError):
+        div = None
+        print("Inside result: {:s}".format("None\n"), end="")
     except ZeroDivisionError:
         div = None
         print("Inside result: {:s}".format("None\n"), end="")
     finally:
         if div is not None:
-            print("Inside result: {:0.2f}\n".format(div), end="")
+            if isinstance(div, int):
+                div = float(div)
+            print("Inside result: {:.1f}\n".format(div), end="")
     return div
 
 
