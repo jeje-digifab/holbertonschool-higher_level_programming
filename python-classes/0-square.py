@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module compiled with python3"""
+
+
 class Square:
-    """Empty class that defines a square"""
+    """"Class defining a Square, for now printing empty stuff"""
     pass
