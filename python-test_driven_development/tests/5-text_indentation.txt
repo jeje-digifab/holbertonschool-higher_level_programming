@@ -3,6 +3,20 @@
 >>> text_indentation("Lorem ipsum dolor")
 Lorem ipsum dolor
 
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+
 >>> text_indentation("")
 
 
@@ -17,3 +31,13 @@ Lorem"ipsum
 Traceback (most recent call last):
   ...
 TypeError: text must be a string
+
+>>> text_indentation("Lorem ipsum dolor\n\nsit amet")
+Lorem ipsum dolor
+<BLANKLINE>
+sit amet
+
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

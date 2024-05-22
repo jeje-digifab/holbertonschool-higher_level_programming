@@ -12,19 +12,25 @@ def text_indentation(text):
     Raises:
         TypeError: If `text` is not a string.
     """
-    skip_next = False
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for idx, i in enumerate(text):
-        if skip_next:
-            skip_next = False
-            continue
-        if i in [".", ":", "?", "!"]:
-            print("{:s}".format(i), end="\n")
-            print()
-            skip_next = True
+
+    current_line = ""
+
+    for char in text:
+        if char in [".", "?", ":"]:
+            current_line = current_line.strip()
+            current_line = current_line.rstrip(" ")
+            print(current_line, end="")
+            print(char, end="\n\n")
+            current_line = ""
         else:
-            print("{:s}".format(i), end="")
+            current_line += char
+
+    if current_line:
+        current_line = current_line.strip()
+        current_line = current_line.rstrip(" ")
+        print(current_line, end="")
 
 
 if __name__ == "__main__":

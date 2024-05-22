@@ -29,28 +29,29 @@ def matrix_divided(matrix, div):
         print(matrix_divided(matrix, 3))
         # Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
     """
-    # Vérifier que la matrice est valide
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if not isinstance(matrix, list) or not all(isinstance(row, list)
+                                               for row in matrix):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
     if not matrix:
         raise TypeError("matrix cannot be empty")
-    if not all(isinstance(elem, (int, float)) for row in matrix for elem in row):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if not all(isinstance(elem, (int, float))
+               for row in matrix for elem in row):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    # Vérifier que div est valide
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Créer une nouvelle matrice pour stocker les résultats
     new_matrix = []
     for row in matrix:
-        # Vérifier que la ligne contient au moins un élément
         if not row:
-            raise TypeError("Each row of the matrix must have at least one element")
+            raise TypeError(
+                "Each row of the matrix must have at least one element")
         new_row = []
         for elem in row:
             new_row.append(round(elem / div, 2))

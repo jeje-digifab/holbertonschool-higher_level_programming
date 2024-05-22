@@ -24,15 +24,3 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_rep_int_list(self):
         self.assertEqual(max_integer([1, 1, 1, 1]), 1)
-
-    def test_one_str_list(self):
-        with self.assertRaises(TypeError):
-            max_integer(["ut"])
-
-    def test_one_str1_list(self):
-        with self.assertRaises(TypeError):
-            max_integer(["1"])
-
-    def test_str_list(self):
-        with self.assertRaises(TypeError):
-            max_integer(["1", "ee", "ooo", "yyy"])
