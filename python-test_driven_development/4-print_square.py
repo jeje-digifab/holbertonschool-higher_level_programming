@@ -39,7 +39,10 @@ def print_square(size):
         TypeError: size must be an integer
         """
     if size == 0:
-        print()
+        """
+        print("{}".format(), end="")
+        """
+        print("", end="")
         return
 
     if not isinstance(size, int):
