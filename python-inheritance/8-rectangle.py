@@ -19,30 +19,12 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """
-        Validates if the value is an integer and greater than 0.
-
-        Args:
-            name (str): The name of the variable.
-            value (int): The value to validate.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than or equal to 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
-    def integer_validator(self, name, value):
-        """
         Validate that value is a positive integer
         """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
 
 
 class Rectangle(BaseGeometry):
