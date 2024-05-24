@@ -96,6 +96,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -118,15 +119,13 @@ class Rectangle:
     def square(cls, size=0):
         """
         Create a new square instance of the class with the given size.
-        The size value must be a positive integer.
-        If no size is provided, a square with a size of 0 is created.
+        The size value must be a non-negative integer.
         """
         if not isinstance(size, int):
-            raise ValueError("width must be an integer")
-        if size <= 0:
+            raise TypeError("width must be an integer")
+        if size < 0:
             raise ValueError("width must be >= 0")
         return cls(size, size)
-
 
 if __name__ == "__main__":
     main()
