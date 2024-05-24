@@ -46,6 +46,8 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """The Rectangle class"""
+
     def __init__(self, width, height):
         """
         Initialize a rectangle with width and height.
@@ -75,6 +77,18 @@ class Square(Rectangle):
     def __init__(self, size):
         """Initializer of the Square class"""
         super().__init__(size, size)
+
+    @property
+    def size(self):
+        """Getter for size"""
+        return self.__width
+
+    @size.setter
+    def size(self, value):
+        """Setter for size"""
+        self.integer_validator("size", value)
+        self.__width = value
+        self.__height = value
 
     def __str__(self):
         """Return the description of the square"""

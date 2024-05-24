@@ -46,6 +46,8 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """The Rectangle class"""
+
     def __init__(self, width, height):
         """
         Initialize a rectangle with width and height.
@@ -79,13 +81,19 @@ class Square(Rectangle):
         Initialize an instance of Square
         """
         super().__init__(size, size)
-        self.__size = size
 
     def area(self):
         """
         Method to calculate the area of the Square
         """
-        return self.__size ** 2
+        return self._Rectangle__width ** 2
+
+    def __str__(self):
+        """
+        Override the __str__ method for display
+        """
+        return "[Square] {}/{}".format(
+            self._Rectangle__width, self._Rectangle__height)
 
 
 if __name__ == "__main__":

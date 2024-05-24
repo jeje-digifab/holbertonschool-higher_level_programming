@@ -46,6 +46,8 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """The Rectangle class"""
+
     def __init__(self, width, height):
         """
         Initialize a rectangle with width and height.
