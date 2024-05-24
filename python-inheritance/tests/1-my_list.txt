@@ -1,5 +1,5 @@
-"""
 >>> MyList = __import__('1-my_list').MyList
+
 >>> my_list = MyList()
 >>> my_list.append(-5)
 >>> my_list.append(0)
@@ -13,7 +13,5 @@
 >>> my_list_empty = MyList()
 >>> my_list_empty.print_sorted()
 []
->>> new_list = my_list.print_sorted()
->>> print(new_list)
-[-5, -4, -3, -1, 0]
-"
+>>> my_list.print_sorted()  # This should not return anything
+
