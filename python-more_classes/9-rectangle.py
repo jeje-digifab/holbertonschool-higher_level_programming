@@ -122,10 +122,17 @@ class Rectangle:
         The size value must be a non-negative integer.
         """
         if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
-        return cls(size, size)
+            raise TypeError("size must be an integer")
+        try:
+            if size < 0:
+                raise ValueError("width must be >= 0")
+            return cls(size, size)
+        except ValueError as e:
+            print("[{}] {}".format(e.__class__.__name__, e))
+            return None
+        finally:
+            print("Bye rectangle...")
+
 
 if __name__ == "__main__":
     main()
