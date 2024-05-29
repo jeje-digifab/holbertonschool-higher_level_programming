@@ -15,12 +15,13 @@ def convert_csv_to_json(csv_file):
     try:
         with open(csv_file, 'r', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
+            rows = list(reader)
             with open('data.json', 'w', encoding='utf-8') as jsonfile:
                 jsonfile.write("[\n")
-                for i, row in enumerate(reader):
+                for i, row in enumerate(rows):
                     jsonfile.write("    ")
                     json.dump(row, jsonfile, separators=(',', ':'))
-                    if i < sum(1 for _ in open(csv_file, 'r')) - 1:
+                    if i < len(rows) - 1:
                         jsonfile.write(",\n")
                     else:
                         jsonfile.write("\n")
