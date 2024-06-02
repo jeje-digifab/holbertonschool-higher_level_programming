@@ -7,9 +7,6 @@ import socketserver
 
 
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
-    """
-    Create a subclass of BaseHTTPRequestHandler to handle HTTP requests
-    """
 
     def do_GET(self):
         """
@@ -38,8 +35,17 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                 "status": "OK"
             }
             self.wfile.write(json.dumps(response).encode())
+        elif self.path == '/info':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            response = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
+            self.wfile.write(json.dumps(response).encode())
         else:
-            self.send_response(404)
+            self.send_response(404, "Not Found")
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
