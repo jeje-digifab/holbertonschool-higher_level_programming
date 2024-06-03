@@ -1,4 +1,4 @@
 FROM alpine:latest
 
-RUN mkdir ~/data
+RUN mkdir /data
 VOLUME local_data_directory:/data
