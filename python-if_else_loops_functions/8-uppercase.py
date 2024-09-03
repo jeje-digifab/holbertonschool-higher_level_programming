@@ -3,7 +3,7 @@
 def uppercase(str):
     """
     Convert all lowercase letters in a string
-    to uppercase and print the result.
+    to uppercase.
 
     Args:
         str (str): The input string to be converted.
