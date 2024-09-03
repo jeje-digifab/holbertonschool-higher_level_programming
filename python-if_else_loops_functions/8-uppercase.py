@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-
     """
     Convert all lowercase letters in a string
     to uppercase and print the result.
