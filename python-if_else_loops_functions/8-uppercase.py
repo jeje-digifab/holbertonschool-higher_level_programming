@@ -21,4 +21,4 @@ def uppercase(str):
 
         print(f"{chr(new_str)}", end="")
 
-    print("\n")
+    print()

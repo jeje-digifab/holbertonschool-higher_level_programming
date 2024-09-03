@@ -8,5 +8,5 @@ representation. The numbers are printed in the format:
 <number> = 0x<hexadecimal>, with each pair on a new line.
 """
 
-for i in range(0, 99):
-    print(f"{i} = 0x{i:x}")
+for exa in range(99):
+    print(f"{exa} = 0x{exa:x}")

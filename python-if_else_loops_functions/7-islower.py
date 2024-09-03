@@ -10,8 +10,4 @@ def islower(c):
     Returns:
         bool: True if c is a lowercase letter, False otherwise.
     """
-
-    if c >= "a" and c <= "z":
-        return True
-    else:
-        return False
+    return ord(c) >= ord('a') and ord(c) <= ord('z')
