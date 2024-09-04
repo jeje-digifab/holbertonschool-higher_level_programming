@@ -20,7 +20,7 @@ ld = number % 10
 Adjust the last digit for negative numbers
 """
 if number < 0:
-    ld = number * -1 % 10
+    ld = number * -1 % 10 * -1
 
 """
 Check if the last digit is 0
