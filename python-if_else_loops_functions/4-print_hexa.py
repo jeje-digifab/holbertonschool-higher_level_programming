@@ -8,5 +8,5 @@ representation. The numbers are printed in the format:
 <number> = 0x<hexadecimal>, with each pair on a new line.
 """
 
-for exa in range(99):
-    print('{} = 0x{:02x}'.format(exa, exa))
+for i in range(0, 99):
+    print("{} = 0x{:x}".format(i, i))
