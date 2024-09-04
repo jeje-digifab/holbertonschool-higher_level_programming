@@ -7,4 +7,5 @@ It prints all lowercase letters of the English alphabet
 from 'a' to 'z' without a newline in between.
 """
 
-print(''.join('{}'.format(chr(97 + i)) for i in range(26)))
+for letter in range(97, 123):
+    print('{}'.format(chr(letter)), end='')
