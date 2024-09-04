@@ -9,4 +9,4 @@ representation. The numbers are printed in the format:
 """
 
 for exa in range(99):
-    print(f"{exa} = 0x{exa:x}")
+    print(f"{exa} = 0x{exa:02x}")

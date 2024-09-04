@@ -7,5 +7,4 @@ It prints all lowercase letters of the English alphabet
 from 'a' to 'z' without a newline in between.
 """
 
-for letter in range(97, 123):
-    print(f"{chr(letter)}", end='')
+print(''.join(chr(97 + i) for i in range(26)))
