@@ -1,12 +1,10 @@
-#!/usr/bin/python3
-
 def uppercase(str):
     """
-    Convert all lowercase letters in a string
-    to uppercase and print the result.
+    Convertit toutes les lettres minuscules d'une chaîne
+    en majuscules et imprime le résultat.
 
     Args:
-        str (str): The input string to be converted.
+        str (str): La chaîne d'entrée à convertir.
 
     Returns:
         None
@@ -18,6 +16,6 @@ def uppercase(str):
         else:
             new_str = (ord(letter))
 
-        print(f"{chr(new_str)}", end="")
+        print("{}".format(chr(new_str)), end="")
 
     print()

@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-
-
 for i in range(10):
     """
     Loop through each digit from 0 to 9.
@@ -12,8 +10,6 @@ for i in range(10):
         combinations in different orders (e.g., 01 and 10).
         """
         if i == 8 and j == 9:
-
-            print(f"{i}{j}")
+            print("{}{}".format(i, j))
         else:
-
-            print(f"{i}{j}, ", end="")
+            print("{}{}, ".format(i, j), end="")
