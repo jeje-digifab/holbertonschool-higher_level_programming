@@ -8,5 +8,7 @@ from 'a' to 'z', excluding the letters 'e' and 'q'.
 The letters are printed without a newline in between.
 """
 
-print(''.join('{}'.format(chr(letter))
-      for letter in range(97, 123) if letter not in (101, 113)))
+for letter in range(97, 123):
+    if letter == 101 or letter == 113:
+        continue
+    print('{}'.format(chr(letter)), end='')
