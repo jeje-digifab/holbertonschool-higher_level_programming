@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from variable_load_5 import a
 
 """
 This script imports the variable 'a' from the module 'variable_load_5.py'
@@ -16,4 +15,5 @@ the script does not execute
 """
 
 if __name__ == "__main__":
-    print(f"{a}")
+    from variable_load_5 import a
+    print("{}".format(a))
