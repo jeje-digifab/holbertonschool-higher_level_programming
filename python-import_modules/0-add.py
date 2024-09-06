@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module provides a function 'add' that takes two integers
-and returns their sum. The function is imported from 'add_0'.
+and returns their sum.
 """
 
 from add_0 import add
