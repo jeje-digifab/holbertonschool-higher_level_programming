@@ -15,7 +15,5 @@ the script does not execute
    run directly.
 """
 
-# Ensure the code only runs when executed directly, not when imported.
 if __name__ == "__main__":
-    # Print the value of the imported variable 'a'
-    print("{}".format(a))
+    print(a)

@@ -18,20 +18,18 @@ It performs the following steps:
 3. For each argument, it prints the argument number and its value in
 the format:"<position>: <argument>".
 """
-
-
 length = len(sys.argv) - 1
 
-if length == 0:
-    print("{} arguments.".format(length))
+if __name__ == "__main__":
 
-elif length == 1:
-    print("{} argument:".format(length))
+    if length == 0:
+        print("{} arguments.".format(length))
 
-else:
-    print("{} arguments:".format(length))
+    elif length == 1:
+        print("{} argument:".format(length))
 
+    else:
+        print("{} arguments:".format(length))
 
-for argument in range(1, len(sys.argv)):
-
-    print("{}: {}".format(argument, sys.argv[argument]))
+    for argument in range(1, len(sys.argv)):
+        print("{}: {}".format(argument, sys.argv[argument]))

@@ -14,14 +14,14 @@ are integers).
 
 import sys
 
+
 length = len(sys.argv) - 1
 result = 0
 
-if length == 0:
-    print("{}".format("0"))
+if __name__ == "__main__":
 
+    for argument in range(1, len(sys.argv)):
 
-for argument in range(1, len(sys.argv)):
-    result += int(sys.argv[argument])
+        result += int(sys.argv[argument])
 
-print("{}".format(result))
+    print("{}".format(result))
