@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module imports basic arithmetic functions (add, sub, mul, div)
-from 'calculator_1.py' and performs operations on two integers.
+and performs operations on two integers.
 """
 
 from calculator_1 import add, sub, mul, div
