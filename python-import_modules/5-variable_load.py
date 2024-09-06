@@ -16,4 +16,4 @@ the script does not execute
 """
 
 if __name__ == "__main__":
-    print(a)
+    print(f"{a}")
