@@ -8,7 +8,7 @@ def max_integer(my_list=[]):
     :return: The maximum integer in the list, or None if the list is empty
     """
     # Initialize the maximum value to 0
-    max = 0
+    maximum = 0
 
     # Return None if the list is empty
     if len(my_list) == 0:
@@ -17,8 +17,8 @@ def max_integer(my_list=[]):
     # Iterate through each number in the list
     for number in my_list:
         # Update max if the current number is greater
-        if number > max:
-            max = number
+        if number > maximum:
+            maximum = number
 
     # Return the maximum value found
-    return (max)
+    return (maximum)
