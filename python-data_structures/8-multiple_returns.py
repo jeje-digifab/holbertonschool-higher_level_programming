@@ -12,4 +12,7 @@ def multiple_returns(sentence):
         and the second element is the first character of the sentence.
         If the sentence is empty, the second element will be an empty string.
     """
+    if len(sentence) == 0:
+        return (len(sentence), None)
+
     return (len(sentence), sentence[:1])

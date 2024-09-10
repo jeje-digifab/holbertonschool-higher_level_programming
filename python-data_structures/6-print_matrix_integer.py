@@ -21,7 +21,7 @@ def print_matrix_integer(matrix=[[]]):
         Convert each element in the row to a string and add to the list
         """
         for elem in row:
-            row_elements.append("{}".format(elem))
+            row_elements.append("{:d}".format(elem))
 
         """
         Join the elements with a space and print the result
