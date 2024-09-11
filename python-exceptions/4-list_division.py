@@ -38,13 +38,13 @@ def list_division(my_list_1, my_list_2, list_length):
 
                 result.append(my_list_1[i] / my_list_2[i])
             except ZeroDivisionError:
-                print("Division by 0")
+                print("{}".format("Division by 0"))
                 result.append(0)
             except TypeError as e:
-                print(e)
+                print("{}".format(e))
                 result.append(0)
     except IndexError as e:
-        print(e)
+        print("{}".format(e))
         result.extend([0] * (list_length - len(result)))
 
     finally:
