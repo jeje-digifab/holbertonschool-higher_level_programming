@@ -11,7 +11,7 @@ def max_integer(my_list=[]):
     if len(my_list) == 0:
         return (None)
 
-    # Initialize the maximum value to 0
+    # Initialize with first element
     maximum = my_list[0]
 
     # Iterate through each number in the list
