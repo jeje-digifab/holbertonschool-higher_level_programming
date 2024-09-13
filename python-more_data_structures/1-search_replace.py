@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This script contains utility functions for basic arithmetic operations.
+"""
+
 
 def search_replace(my_list, search, replace):
     """
