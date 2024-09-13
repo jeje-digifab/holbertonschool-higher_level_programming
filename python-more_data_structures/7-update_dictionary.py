@@ -5,20 +5,16 @@ This script contains utility functions for basic arithmetic operations.
 
 
 def update_dictionary(a_dictionary, key, value):
-    """
-    Creates a new dictionary by copying the original dictionary and updating
-    it with the provided key and value.
+    """Replace or add key/value in a dictionary.
 
     Args:
-        a_dictionary (dict): The original dictionary to be copied.
-        key: The key to be added or updated in the new dictionary.
-        value: The value to be associated with the key in the new dictionary.
+        a_dictionary (dict): The dictionary to be updated.
+        key (str): The key to be updated or added.
+        value: The value associated with the key.
 
     Returns:
-        dict: A new dictionary with the updated key-value pair.
+        dict: The updated dictionary.
     """
-    a_dictionary_new = a_dictionary.copy()
+    a_dictionary.update({key: value})
 
-    a_dictionary_new.update({key: value})
-
-    return (a_dictionary_new)
+    return (a_dictionary)
