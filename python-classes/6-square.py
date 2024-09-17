@@ -20,8 +20,8 @@ class Square:
             size (float): The length of each side of the square.
         """
 
-        self._size = size
-        self._position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -31,7 +31,7 @@ class Square:
         Returns:
             int: The length of each side of the square.
         """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -52,11 +52,11 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
 
-        self._size = value
+        self.__size = value
 
     @property
     def position(self):
-        return self._position
+        return self.__position
 
     @position.setter
     def position(self, value):
@@ -64,7 +64,7 @@ class Square:
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self._position = value
+        self.__position = value
 
     def area(self):
         """
@@ -75,7 +75,7 @@ class Square:
             of the side length.
         """
 
-        return (self._size ** 2)
+        return (self.__size ** 2)
 
     def my_print(self):
         """
@@ -85,9 +85,11 @@ class Square:
         Otherwise, it will print the square using the '#' character.
         """
         if self.size == 0:
-            print("")
+                print("")
+        else:
+            for _ in range(self.position[1]):
+                print("")
 
-        # print(" " * self.position)
+            for _ in range(self.size):
+                print(" " * self.position[0] + "#" * self.size)
 
-        for _ in range(self.size):
-            print("#" * self.size)

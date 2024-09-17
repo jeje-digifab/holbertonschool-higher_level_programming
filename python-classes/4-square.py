@@ -20,7 +20,7 @@ class Square:
             size (float): The length of each side of the square.
         """
 
-        self._size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -30,7 +30,7 @@ class Square:
         Returns:
             int: The length of each side of the square.
         """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -51,7 +51,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
 
-        self._size = value
+        self.__size = value
 
     def area(self):
         """
@@ -62,4 +62,4 @@ class Square:
             of the side length.
         """
 
-        return (self._size ** 2)
+        return (self.__size ** 2)
