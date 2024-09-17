@@ -14,10 +14,12 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initialize a new square with a specified side length.
+        Initialize a new square with a specified side length and position.
 
         Args:
-            size (float): The length of each side of the square.
+            size (int): The length of each side of the square. Default is 0.
+            position (tuple): A tuple of two positive integers representing
+                              the position (x, y) of the square. Default is (0, 0).
         """
 
         self.__size = size
@@ -56,10 +58,26 @@ class Square:
 
     @property
     def position(self):
+        """
+        Get the position of the square.
+
+        Returns:
+            tuple: A tuple representing the position (x, y).
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """
+        Set the position of the square.
+
+        Args:
+            value (tuple): A tuple of two positive integers representing the new
+                           position of the square.
+
+        Raises:
+            TypeError: If `value` is not a tuple of 2 positive integers.
+        """
 
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -82,14 +100,14 @@ class Square:
         Print the square using the '#' character.
 
         If the size of the square is 0, this method will print an empty line.
-        Otherwise, it will print the square using the '#' character.
+        Otherwise, it will print the square using the '#' character,
+        taking the position into account.
         """
         if self.size == 0:
-                print("")
+            print("")
         else:
             for _ in range(self.position[1]):
                 print("")
 
             for _ in range(self.size):
                 print(" " * self.position[0] + "#" * self.size)
-
