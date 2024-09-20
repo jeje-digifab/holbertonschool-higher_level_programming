@@ -29,8 +29,8 @@ class Rectangle:
     def width(self):
         """
         Gets the width of the rectangle.
-Used as symbol for string representation
-Can be any type
+        Used as symbol for string representation
+        Can be any type
         Returns:
             int: The width of the rectangle.
         """

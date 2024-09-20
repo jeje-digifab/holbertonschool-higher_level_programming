@@ -134,6 +134,53 @@ class Rectangle:
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        This module defines a Rectangle class and provides
+        a static method to compare
+        two rectangle instances based on their areas.
+
+        The class includes methods to determine the area of each rectangle
+        and a static method that returns the rectangle with the larger
+        or equal area.
+        If the two rectangles have the same area, the first rectangle
+        is returned.
+
+        Usage:
+            - Create instances of the Rectangle class.
+            - Use the `bigger_or_equal` static method to
+            compare two rectangle instances.
+
+        Exceptions:
+            - Raises TypeError if the provided inputs are not instances of the
+            Rectangle class.
+        """
+
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+
+        else:
+            return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        This module defines a Rectangle class and provides
+        a class method to create a square instance.
+
+        The class includes methods to determine the area of the square
+        and a class method that
+        """
+
+        return cls(size, size)
+
     def __del__(self):
         """
         Print a message when an instance of Rectangle is deleted.
