@@ -180,7 +180,6 @@ class Rectangle:
         """
 
         if size < 0:
-            print("Error: size must be >= 0")
             size = 0
 
         return cls(size, size)
