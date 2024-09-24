@@ -94,9 +94,9 @@ class Square(Rectangle):
         attribute after validating it using the integer_validator method.
         """
 
-        super().__init__(size, size)
-
         self.integer_validator("size", size)
+        
+        super().__init__(size, size)
 
         self.__size = size
 
