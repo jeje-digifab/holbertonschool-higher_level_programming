@@ -59,32 +59,7 @@ class Rectangle(BaseGeometry):
         return (f"[Rectangle] {self.__width}/{self.__height}")
 
 
-class Square(Rectangle):
-    """
-    Square class for geometric calculations.
-
-    This class represents a square, which is a special type of rectangle where
-    the width and height are equal. It inherits from the Rectangle class,
-    utilizing its methods and properties while ensuring that the size of the
-    square is validated as a positive integer.
-
-    Attributes:
-        __size (int): The size of the square, which is both the width
-        and height.
-
-    Methods:
-        __init__(self, size):
-            Initializes a Square object with the given size.
-            Validates that size is a positive integer.
-
-        area(self):
-            Calculates and returns the area of the square.
-
-        __str__(self):
-            Returns a string representation of the square in the format
-            "[Rectangle] <size>/<size>", since a square is a special case of
-            a rectangle.
-    """
+class Square(BaseGeometry):
 
     def __init__(self, size):
         """
@@ -94,7 +69,7 @@ class Square(Rectangle):
         attribute after validating it using the integer_validator method.
         """
 
-        super().__init__(size, size)
+        super().__init__()
 
         self.integer_validator("size", size)
 
@@ -120,4 +95,4 @@ class Square(Rectangle):
         str: A string in the format [Rectangle] <size>/<size>.
         """
 
-        return super().__str__()
+        return (f"[Rectangle] {self.__size}/{self.__size}")

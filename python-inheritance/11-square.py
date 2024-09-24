@@ -120,4 +120,4 @@ class Square(Rectangle):
         str: A string in the format [Rectangle] <size>/<size>.
         """
 
-        return f"[Square] {self.__size}/{self.__size}"
+        return (f"[Square] {self.__size}/{self.__size}")
