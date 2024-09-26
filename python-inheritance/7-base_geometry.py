@@ -14,8 +14,8 @@ class BaseGeometry:
     def area(self):
         """
         This method is used to calculate the area of a geometric shape.
-        It is expected to be implemented in subclasses that inherit from
-        the BaseGeometry class. If called directly from BaseGeometry,
+        It is expected to be implemented in subclasses that inherit of
+        the BaseGeometry class. If called directly of BaseGeometry,
         it will raise an Exception indicating that the method is
         not implemented.
         """

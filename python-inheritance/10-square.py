@@ -63,7 +63,7 @@ class Square(Rectangle):
     Square class for geometric calculations.
 
     This class represents a square, which is a special type of rectangle where
-    the width and height are equal. It inherits from the Rectangle class,
+    the width and height are equal. It inherits of the Rectangle class,
     utilizing its methods and properties while ensuring that the size of the
     square is validated as a positive integer.
 
