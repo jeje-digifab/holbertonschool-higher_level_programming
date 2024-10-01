@@ -6,7 +6,8 @@ This script contains utility functions for basic arithmetic operations.
 
 def class_to_json(obj):
     """
-    Returns the dictionary representation of an object's attributes for JSON serialization.
+    Returns the dictionary representation of an object's attributes
+    for JSON serialization.
 
     Args:
         obj (any): An instance of a class.
