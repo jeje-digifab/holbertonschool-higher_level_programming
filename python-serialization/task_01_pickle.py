@@ -64,8 +64,11 @@ class CustomObject:
         Returns:
             None
         """
-        with open(filename, "wb") as f:
-            return pickle.dump(self, f)
+        try:
+            with open(filename, "wb") as f:
+                pickle.dump(self, f)
+        except (FileNotFoundError, IOError, pickle.PicklingError):
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -78,5 +81,8 @@ class CustomObject:
         Returns:
             CustomObject: The deserialized object from the file.
         """
-        with open(filename, "rb") as f:
-            return pickle.load(f)
+        try:
+            with open(filename, "rb") as f:
+                return pickle.load(f)
+        except (FileNotFoundError, IOError, pickle.UnpicklingError):
+            return None
