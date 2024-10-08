@@ -1,18 +1,29 @@
 #!/usr/bin/python3
 """
-This script contains utility functions for basic arithmetic operations.
+This script fetches data from an API and provides utility functions for
+printing and saving posts from a JSON response to a CSV file.
 """
 
 import requests
 import csv
-import json
 
 r = requests.get('https://jsonplaceholder.typicode.com/posts')
-# r.headers['content-type']
 
 filename = "posts.csv"
 
+
 def fetch_and_print_posts():
+    """
+    Fetches posts from an API and prints the title of each post.
+
+    Prints the status code of the HTTP request, and if the request
+    is successful
+    (status code 200), it prints the title of each post retrieved
+    from the JSON response.
+
+    Returns:
+        None
+    """
     print(f"Status Code: {r.status_code}")
     if r.status_code == 200:
         posts = r.json()
@@ -22,6 +33,17 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
+    """
+    Fetches posts from an API and saves them to a CSV file.
+
+    If the request is successful (status code 200), it writes the
+    posts to a CSV file
+    with columns for 'id', 'title', and 'body'. The CSV file is
+    saved as 'posts.csv'.
+
+    Returns:
+        None
+    """
     if r.status_code == 200:
         posts = r.json()
 
@@ -30,12 +52,7 @@ def fetch_and_save_posts():
         writer.writeheader()
 
         for post in posts:
-            writer.writerow({"id": post["id"], "title": post["title"], "body": post["body"]})
-
-
-
-
-
-
-
-
+            writer.writerow(
+                {"id": post["id"],
+                 "title": post["title"],
+                 "body": post["body"]})
