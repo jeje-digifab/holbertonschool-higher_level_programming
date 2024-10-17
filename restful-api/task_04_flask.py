@@ -5,7 +5,6 @@ functions for basic operations.
 """
 
 from flask import Flask, jsonify, request
-import json
 
 app = Flask(__name__)
 
@@ -33,7 +32,7 @@ def home():
     Returns:
         str: A simple welcome message.
     """
-    return "<p>Welcome to the Flask API!</p>"
+    return jsonify("Welcome to the Flask API!")
 
 
 @app.route("/data")
