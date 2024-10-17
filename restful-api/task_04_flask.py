@@ -47,21 +47,26 @@ def get_usernames():
     return jsonify(usernames)
 
 
-@app.route("/users/<username>")
+@app.route('/users/<username>', methods=['GET'])
 def get_user(username):
     """
-    Endpoint to retrieve detailed information about a specific user.
-
-    Args:
-        username (str): The username of the user to retrieve.
-
+    Fetches user information by username.
     Returns:
-        JSON: A JSON object with user details if found, or an error message
-        if not found.
+        JSON: A JSON object with user details if found,
+        or an error message if not found.
     """
+    if not users:
+        return jsonify({"error": "No users found"}), 404
+
     user = users.get(username)
     if user:
-        return jsonify(user), 200
+        ordered_user = {
+            "username": user["username"],
+            "name": user["name"],
+            "age": user["age"],
+            "city": user["city"]
+        }
+        return jsonify(ordered_user), 200
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -80,7 +85,7 @@ def status():
 @app.route("/add_user", methods=['POST'])
 def add_user():
     """
-    Endpoint to add a new user.
+    Endpoint to add a new user or update an existing user.
 
     Request Body:
         JSON: A JSON object containing user data, including username, name,
@@ -88,7 +93,7 @@ def add_user():
 
     Returns:
         JSON: A message indicating the result of the operation,
-        including the added user or an error message.
+        including the added or updated user or an error message.
     """
     data = request.get_json()
 
@@ -97,11 +102,24 @@ def add_user():
 
     username = data.get("username")
     if not username:
-        return jsonify({'error":"Username is required'}), 400
+        return jsonify({'error': "Username is required"}), 400
 
-    if username in users:
-        return jsonify({'error': 'User already exists',
-                        'user': users[username]}), 200
+    existing_user = users.get(username)
+
+    if existing_user:
+        if (existing_user["name"] == data.get("name") and
+                existing_user["age"] == data.get("age") and
+                existing_user["city"] == data.get("city")):
+            return jsonify({'error': 'User already exists',
+                            'user': existing_user}), 200
+        else:
+            existing_user.update({
+                "name": data.get("name"),
+                "age": data.get("age"),
+                "city": data.get("city")
+            })
+            return jsonify({'message': 'User updated',
+                            'user': existing_user}), 200
 
     user_data = {
         "username": username,
