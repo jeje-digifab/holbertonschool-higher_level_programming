@@ -24,7 +24,7 @@ users = {
 }
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def home():
     """
     Home route that returns a welcome message.
@@ -35,7 +35,7 @@ def home():
     return jsonify("Welcome to the Flask API!")
 
 
-@app.route("/data")
+@app.route("/data", methods=["GET"])
 def get_usernames():
     """
     Endpoint to retrieve a list of usernames.
@@ -66,7 +66,7 @@ def get_user(username):
         return jsonify({"error": "User not found"}), 404
 
 
-@app.route("/status")
+@app.route("/status", methods=["GET"])
 def status():
     """
     Endpoint to check the status of the API.
