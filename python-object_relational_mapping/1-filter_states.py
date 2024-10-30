@@ -23,7 +23,9 @@ def main():
     )
     cur = conn.cursor()
     # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE id IN (4, 5) ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states \
+                WHERE states.name IN ('New York', 'Nevada') \
+                ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
