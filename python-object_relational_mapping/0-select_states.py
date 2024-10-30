@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script contains a function to print a square with a given size.
+Script that lists all states from the database hbtn_0e_0_usa
 """
 
 import MySQLdb
@@ -8,7 +8,9 @@ import sys
 
 
 def main():
-
+    """
+    Connects to a MySQL database and retrieves all states.
+    """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]

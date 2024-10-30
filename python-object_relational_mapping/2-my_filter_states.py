@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script contains a function to print a square with a given size.
+Script that takes in an argument and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument.
 """
 
 import MySQLdb
@@ -8,7 +9,9 @@ import sys
 
 
 def main():
-
+    """
+    Connects to a MySQL database and retrieves states with a given name.
+    """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
