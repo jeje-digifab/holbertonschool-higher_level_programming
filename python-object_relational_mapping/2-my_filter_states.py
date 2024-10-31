@@ -15,7 +15,15 @@ def main():
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    filter = sys.argv[4]
+
+    try:
+        if len(sys.argv) < 5 or len(sys.argv) >= 6:
+            raise IndexError("Expected exactly 5 arguments")
+        filter = sys.argv[4]
+
+    except IndexError as e:
+        print(e)
+        sys.exit(1)
 
     conn = MySQLdb.connect(
         host="localhost",
@@ -27,8 +35,8 @@ def main():
     )
     cur = conn.cursor()
     # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE name = %s \
-                ORDER BY id ASC", (filter,))
+    cur.execute("SELECT * FROM states WHERE name = '{}' \
+                ORDER BY id ASC".format(filter))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
