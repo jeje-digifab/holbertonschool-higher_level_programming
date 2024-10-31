@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa
+Script that lists all cities from the database hbtn_0e_4_usa
 """
 
 import MySQLdb
@@ -10,8 +9,8 @@ import sys
 
 def main():
     """
-    Connects to a MySQL database and retrieves states with names 'New York'
-    and 'Nevada'.
+    Connects to a MySQL database and retrieves all cities along
+    with their corresponding state names.
     """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
