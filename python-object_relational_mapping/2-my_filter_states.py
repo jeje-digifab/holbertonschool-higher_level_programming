@@ -36,7 +36,7 @@ def main():
     cur = conn.cursor()
     # HERE I have to know SQL to grab all states in my database
     cur.execute("SELECT * FROM states WHERE name = '{}' \
-                ORDER BY id ASC".format(filter))
+                ORDER BY states.id ASC".format(filter))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
