@@ -10,8 +10,7 @@ import sys
 
 def main():
     """
-    Connects to a MySQL database and retrieves states with names 'New York'
-    and 'Nevada'.
+    Connects to a MySQL database and retrieves all cities of a given state.
     """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
