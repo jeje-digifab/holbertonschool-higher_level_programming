@@ -26,8 +26,15 @@ def main():
 
     session = Session()
     # HERE: no SQL query, only objects!
-    for state in session.query(State).order_by(State.id).filter(State.name.like("%a%")).all():
+    for state in (
+        session.query(State)
+        .order_by(State.id)
+        .filter(State.name.like("%a%"))
+        .all()
+    ):
+
         print("{}: {}".format(state.id, state.name))
+
     session.close()
 
 
