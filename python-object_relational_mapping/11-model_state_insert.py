@@ -35,6 +35,8 @@ def main():
     session.add(louisiana)
     session.commit()
 
+    print(f"{louisiana.id}")
+
     session.close()
 
 
