@@ -1,1 +1,1 @@
-const color = document.querySelector("header").style.color = "#FF0000";
+const addColor = document.querySelector('header').style.color = '#FF0000';
